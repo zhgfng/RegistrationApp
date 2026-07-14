@@ -13,7 +13,10 @@ const db = mysql.createConnection({
     host: 'c237-loosee-mysql.mysql.database.azure.com',
     user: 'c237_015',
     password: 'c237015@2026!',
-    database: 'c237_015_team1supermarketdb'
+    database: 'c237_015_team1supermarketdb',
+    ssl: {
+        rejectUnauthorized: true //Or false if you don't have the CA certificate file handy
+    }
 });
 
 db.connect((err) => {
